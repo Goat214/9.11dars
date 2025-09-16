@@ -1,97 +1,17 @@
-/* Simple, compact CSS for the Recipe form + cards
-   - Small font sizes
-   - Tight spacing
-   - No hover effects, no shadows
-*/
+/* Global styles */
+/* Google Fonts qo‘shish HTML head yoki index.css da */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-* {
-  box-sizing: border-box;
+body, html, #root {
+  font-family: 'Roboto', sans-serif;
+  background: #f5f7f6;
+  color: #163a34;
 }
 
-html, body, #root {
-  height: 100%;
-  background: #f9f9f9;
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  color: #111;
-  margin: 0;
-}
-
-.form-wrapper {
-  max-width: 720px;
-  margin: 20px auto;
-  padding: 10px;
-}
-
-.form {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 10px;
-}
-
-.form-input {
-  width: 100%;
-  padding: 6px 8px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  font-size: 12px;
-}
-
-.submit-btn {
-  grid-column: span 2;
-  padding: 6px 8px;
-  border-radius: 3px;
-  border: 1px solid #007b83;
-  background: transparent;
-  color: #007b83;
-  font-size: 12px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-@media (max-width: 600px) {
-  .form {
-    grid-template-columns: 1fr;
-  }
-  .submit-btn {
-    grid-column: auto;
-  }
-}
-
-.recipes {
-  margin-top: 12px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 10px;
-}
-
-.recipe-card {
-  background: #fff;
-  border: 1px solid #ccc;
-  padding: 8px;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
+/* Card text */
 .recipe-title {
-  margin: 0;
-  font-size: 14px;
-  font-weight: bold;
-  color: #111;
-}
-
-.recipe-image {
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 3px;
-  border: 1px solid #ccc;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
 }
 
 .recipe-overview,
@@ -99,25 +19,294 @@ html, body, #root {
 .recipe-time,
 .recipe-ingredients,
 .recipe-instructions {
-  margin: 0;
-  font-size: 12px;
-  color: #555;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html, #root {
+  font-family: 'Nunito Sans', sans-serif;
+  background: #f5f7f6;
+  color: #163a34;
+  min-height: 100%;
+}
+
+/* Form wrapper */
+.form-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Form inputs */
+.form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 16px rgba(22,58,52,0.08);
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 50px;
+  border: 2px solid #cbd5d0;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 8px 20px rgba(79,70,229,0.25);
+}
+
+/* Submit button */
+.submit-btn {
+  grid-column: span 2;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: none;
+  background: #163a34;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #0d2e20;
+  transform: scale(1.05);
+}
+
+/* Recipes list */
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Recipe card */
+.recipe-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #e0e6e3;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 16px -8px rgba(22,58,52,0.16);
+}
+
+.recipe-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(22,58,52,0.2);
+}
+
+/* Image */
+.recipe-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.recipe-card:hover .recipe-image {
+  transform: scale(1.05);
+}
+
+/* Text */
+.recipe-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  color: #163a34;
+  margin-bottom: 4px;
+}
+
+.recipe-overview {
+  font-size: 16px;
+  font-weight: 500;
+  color: #395852;
+  line-height: 24px;
+}
+
+.recipe-servings,
+.recipe-time,
+.recipe-ingredients,
+.recipe-instructions {
+  font-size: 14px;
+  font-weight: 500;
+  color: #163a34;
+  line-height: 20px;
+}
+
+/* Delete button */
 .delete-btn {
   margin-top: auto;
-  padding: 5px 8px;
-  border-radius: 3px;
+  padding: 8px 12px;
+  border-radius: 50px;
   border: 1px solid #d9534f;
   background: transparent;
   color: #d9534f;
-  font-size: 12px;
-  font-weight: bold;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: #d9534f;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 600px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  .submit-btn {
+    grid-column: auto;
+  }
+
+  .recipe-image {
+    height: 180px;
+  }
+}
+
+/* Header */
+.site-header {
+  background: linear-gradient(90deg, #163a34, #395852);
+  padding: 16px 0;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.site-logo {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
   cursor: pointer;
 }
 
-.form-wrapper > p {
+.nav-menu {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffd700;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.site-footer {
+  background: #163a34;
+  color: #fff;
+  padding: 24px 16px;
+  margin-top: 2rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+}
+
+.social-link {
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  color: #ffd700;
+  transform: scale(1.2);
+}
+
+/* Title */
+.title {
+  font-family: 'Poppins', sans-serif; /* zamonaviy font */
+  font-size: 2.5rem; /* katta, ko‘zga tashlanadigan */
+  font-weight: 700;
+  color: #163a34; /* quyu yashil rang */
   text-align: center;
-  margin-top: 8px;
-  font-size: 12px;
+  margin-bottom: 2rem;
+  position: relative;
+  animation: fadeInDown 1s ease forwards;
+}
+
+/* Title tagiga underline effekt */
+.title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #00b894, #55efc4);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.title:hover::after {
+  transform: scaleX(1);
+}
+
+/* Fade in animation */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
