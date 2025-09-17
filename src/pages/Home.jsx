@@ -147,7 +147,6 @@ function Home() {
 
   return (
     <div className="form-wrapper">
-        
       <h1 className="title">Add recipes</h1>
       <ToastContainer />
       <form onSubmit={hendleSubit} className="form">
@@ -213,9 +212,16 @@ function Home() {
         </button>
       </form>
 
+      <p className="info-text">
+        Share your useful recipe with others and give them a chance to try
+        something new!
+      </p>
+
+      <h2 className="section-title">Recipes Suggested by Others</h2>
+
+
       {isPending && <p>Loading...</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
-
 
       <div className="recipes">
         {Array.isArray(data) &&
