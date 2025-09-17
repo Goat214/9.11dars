@@ -217,8 +217,6 @@ function Home() {
         something new!
       </p>
 
-      <h2 className="section-title">Recipes Suggested by Others</h2>
-
 
       {isPending && <p>Loading...</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
